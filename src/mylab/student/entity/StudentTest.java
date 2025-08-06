@@ -5,9 +5,9 @@ public class StudentTest {
 	public static void main(String[] args) {
 		Student student = new Student();
 		
-		student.setStudentId("c393005");
+		student.setStudentId("123456789");
 		student.setName("김철수");
-		student.setMajor("컴퓨터공학과");
+		student.setMajor("컴퓨터공학");
 		student.setGrade(3);
 		
 		System.out.println(student.getName() + "/" + student.getMajor() + '/' + student.getGrade() + "학년");
