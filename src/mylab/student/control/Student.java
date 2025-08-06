@@ -8,7 +8,6 @@ public class Student {
 	private int grade;
 	
 	public Student() {
-		
 	}
 	
 	public Student(String studentId, String name, String major, int grade) {
@@ -51,7 +50,7 @@ public class Student {
 	}
 	
 	public void withdraw(int grade) throws InvalidGradeException{
-		if(4 > this.grade) {
+		if(5 >= this.grade) {
 			String errMessage = String.format("학년은 1~4 사이여야 합니다.");
 			throw new InvalidGradeException(errMessage);
 		}

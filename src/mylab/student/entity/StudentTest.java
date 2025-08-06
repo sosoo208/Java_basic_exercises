@@ -5,7 +5,7 @@ public class StudentTest {
 	public static void main(String[] args) {
 		Student student = new Student();
 		
-		student.setStudentId("123456789");
+		student.setStudentId("12345");
 		student.setName("±èÃ¶¼ö");
 		student.setMajor("ÄÄÇ»ÅÍ°øÇĞ");
 		student.setGrade(3);
