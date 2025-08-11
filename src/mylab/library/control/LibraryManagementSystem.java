@@ -7,7 +7,10 @@ public class LibraryManagementSystem {
     public static void main(String[] args) {
         Library library = new Library("Áß¾Ó µµ¼­°ü");
 
+<<<<<<< HEAD
         // »ùÇÃ µµ¼­ Ãß°¡
+=======
+>>>>>>> 904b890 (ì€í–‰ ê³„ì¢Œ ê´€ë¦¬ ì‹œìŠ¤í…œ êµ¬í˜„í•˜ê¸°)
         library.addBook(new Book("ÀÚ¹Ù ÇÁ·Î±×·¡¹Ö", "±èÀÚ¹Ù", "978-89-01-12345-6", 2022));
         library.addBook(new Book("°´Ã¼ÁöÇâÀÇ »ç½Ç°ú ¿ÀÇØ", "Á¶¿µÈ£", "978-89-01-67890-1", 2015));
         library.addBook(new Book("Clean Code", "Robert C. Martin", "978-0-13-235088-4", 2008));

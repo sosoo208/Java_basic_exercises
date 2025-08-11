@@ -7,7 +7,10 @@ logs/
 .settings/
 bin/
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 904b890 (은행 계좌 관리 시스템 구현하기)
 ### STS ###
 .apt_generated
 .classpath
