@@ -1,9 +1,7 @@
 package mylab.bank.exception;
 
-public class InsufficientBalanceException {
-
-	public InsufficientBalanceException() {
-		// TODO Auto-generated constructor stub
-	}
-
+public class InsufficientBalanceException extends Exception {
+    public InsufficientBalanceException(String message) {
+        super(message);
+    }
 }
