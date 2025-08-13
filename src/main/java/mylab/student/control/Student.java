@@ -49,9 +49,9 @@ public class Student {
 		this.major = major;
 	}
 	
-	public void withdraw(int grade) throws InvalidGradeException{
-		if(5 >= this.grade) {
-			String errMessage = String.format("ÇĞ³âÀº 1~4 »çÀÌ¿©¾ß ÇÕ´Ï´Ù.");
+	public void gradesys(int grade) throws InvalidGradeException{
+		if(4 > this.grade) {
+			String errMessage = String.format("í•™ë…„ì€ 1~4 ì‚¬ì´ì—¬ì•¼ í•©ë‹ˆë‹¤.");
 			throw new InvalidGradeException(errMessage);
 		}
 		

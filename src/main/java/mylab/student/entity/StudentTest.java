@@ -6,15 +6,15 @@ public class StudentTest {
 		Student student = new Student();
 		
 		student.setStudentId("12345");
-		student.setName("±èÃ¶¼ö");
-		student.setMajor("ÄÄÇ»ÅÍ°øÇĞ");
+		student.setName("ê¹€ì² ìˆ˜");
+		student.setMajor("ì»´í“¨í„°ê³µí•™");
 		student.setGrade(3);
 		
-		System.out.println(student.getName() + "/" + student.getMajor() + '/' + student.getGrade() + "ÇĞ³â");
+		System.out.println(student.getName() + "/" + student.getMajor() + '/' + student.getGrade() + "í•™ë…„");
 		
 		try{
-			System.out.println("5ÇĞ³âÀ¸·Î º¯°æ");
-			student.withdraw(5);
+			System.out.println("5í•™ë…„ìœ¼ë¡œ ë³€ê²½");
+			student.gradesys(5);
 		}catch(Exception e){
 			System.out.println(e.getMessage());
 		}
