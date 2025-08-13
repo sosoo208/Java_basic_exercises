@@ -71,8 +71,8 @@ public class Book {
 	
 	@Override
     public String toString() {
-        return String.format("Ã¥ Á¦¸ñ: %s\tÀúÀÚ: %s\tISBN: %s\tÃâÆÇ³âµµ: %d\t´ëÃâ °¡´É ¿©ºÎ: %s",
-                title, author, isbn, publishYear, (isAvailable ? "°¡´É" : "´ëÃâ Áß"));
+        return String.format("ì±… ì œëª©: %s\tì €ì: %s\tISBN: %s\tì¶œíŒë…„ë„: %d\tëŒ€ì¶œ ê°€ëŠ¥ ì—¬ë¶€: %s",
+                title, author, isbn, publishYear, (isAvailable ? "ê°€ëŠ¥" : "ëŒ€ì¶œ ì¤‘"));
     }
 
 }

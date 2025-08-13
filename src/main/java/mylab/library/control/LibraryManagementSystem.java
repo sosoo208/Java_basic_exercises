@@ -5,51 +5,52 @@ import mylab.library.entity.*;
 public class LibraryManagementSystem {
 
     public static void main(String[] args) {
-        Library library = new Library("Áß¾Ó µµ¼­°ü");
+    	Library library = new Library("ì¤‘ì•™ ë„ì„œê´€");
 
-        library.addBook(new Book("ÀÚ¹Ù ÇÁ·Î±×·¡¹Ö", "±èÀÚ¹Ù", "978-89-01-12345-6", 2022));
-        library.addBook(new Book("°´Ã¼ÁöÇâÀÇ »ç½Ç°ú ¿ÀÇØ", "Á¶¿µÈ£", "978-89-01-67890-1", 2015));
+        // ìƒ˜í”Œ ë„ì„œ ì¶”ê°€
+        library.addBook(new Book("ìë°” í”„ë¡œê·¸ë˜ë°", "ê¹€ìë°”", "978-89-01-12345-6", 2022));
+        library.addBook(new Book("ê°ì²´ì§€í–¥ì˜ ì‚¬ì‹¤ê³¼ ì˜¤í•´", "ì¡°ì˜í˜¸", "978-89-01-67890-1", 2015));
         library.addBook(new Book("Clean Code", "Robert C. Martin", "978-0-13-235088-4", 2008));
         library.addBook(new Book("Effective Java", "Joshua Bloch", "978-0-13-468599-1", 2018));
         library.addBook(new Book("Head First Java", "Kathy Sierra", "978-0-596-00920-5", 2005));
-        library.addBook(new Book("ÀÚ¹ÙÀÇ Á¤¼®", "³²±Ã¼º", "978-89-01-14077-4", 2019));
+        library.addBook(new Book("ìë°”ì˜ ì •ì„", "ë‚¨ê¶ì„±", "978-89-01-14077-4", 2019));
 
         library.displayStatus();
 
-        System.out.println("===== µµ¼­ °Ë»ö Å×½ºÆ® =====");
-        System.out.println("Á¦¸ñÀ¸·Î °Ë»ö °á°ú:");
-        for (Book b : library.searchByTitle("ÀÚ¹ÙÀÇ Á¤¼®")) {
+        System.out.println("===== ë„ì„œ ê²€ìƒ‰ í…ŒìŠ¤íŠ¸ =====");
+        System.out.println("ì œëª©ìœ¼ë¡œ ê²€ìƒ‰ ê²°ê³¼:");
+        for (Book b : library.searchByTitle("ìë°”ì˜ ì •ì„")) {
             System.out.println(b);
         }
         System.out.println();
-        System.out.println("ÀúÀÚ·Î °Ë»ö °á°ú:");
+        System.out.println("ì €ìë¡œ ê²€ìƒ‰ ê²°ê³¼:");
         for (Book b : library.searchByAuthor("Robert C. Martin")) {
             System.out.println(b);
         }
         System.out.println();
 
-        System.out.println("===== µµ¼­ ´ëÃâ Å×½ºÆ® =====");
-        if (library.checkOutBook("ÀÚ¹ÙÀÇ Á¤¼®")) {
-            System.out.println("µµ¼­ ´ëÃâ ¼º°ø!");
-            for (Book b : library.searchByTitle("ÀÚ¹ÙÀÇ Á¤¼®")) {
-                System.out.println("´ëÃâµÈ µµ¼­ Á¤º¸:");
+        System.out.println("===== ë„ì„œ ëŒ€ì¶œ í…ŒìŠ¤íŠ¸ =====");
+        if (library.checkOutBook("ìë°”ì˜ ì •ì„")) {
+            System.out.println("ë„ì„œ ëŒ€ì¶œ ì„±ê³µ!");
+            for (Book b : library.searchByTitle("ìë°”ì˜ ì •ì„")) {
+                System.out.println("ëŒ€ì¶œëœ ë„ì„œ ì •ë³´:");
                 System.out.println(b);
             }
         }
         System.out.println();
-        System.out.println("µµ¼­°ü ÇöÀç »óÅÂ:");
+        System.out.println("ë„ì„œê´€ í˜„ì¬ ìƒíƒœ:");
         library.displayStatus();
 
-        System.out.println("===== µµ¼­ ¹İ³³ Å×½ºÆ® =====");
-        if (library.returnBook("ÀÚ¹ÙÀÇ Á¤¼®")) {
-            System.out.println("µµ¼­ ¹İ³³ ¼º°ø!");
-            for (Book b : library.searchByTitle("ÀÚ¹ÙÀÇ Á¤¼®")) {
-                System.out.println("¹İ³³µÈ µµ¼­ Á¤º¸:");
+        System.out.println("===== ë„ì„œ ë°˜ë‚© í…ŒìŠ¤íŠ¸ =====");
+        if (library.returnBook("ìë°”ì˜ ì •ì„")) {
+            System.out.println("ë„ì„œ ë°˜ë‚© ì„±ê³µ!");
+            for (Book b : library.searchByTitle("ìë°”ì˜ ì •ì„")) {
+                System.out.println("ë°˜ë‚©ëœ ë„ì„œ ì •ë³´:");
                 System.out.println(b);
             }
         }
         System.out.println();
-        System.out.println("µµ¼­°ü ÇöÀç »óÅÂ:");
+        System.out.println("ë„ì„œê´€ í˜„ì¬ ìƒíƒœ:");
         library.displayStatus();
 
         library.displayAvailableBooks();

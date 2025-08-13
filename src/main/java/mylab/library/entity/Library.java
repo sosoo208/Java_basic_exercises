@@ -14,16 +14,16 @@ public class Library {
 
     public void addBook(Book book) {
         books.add(book);
-        System.out.println("µµ¼­°¡ Ãß°¡µÇ¾ú½À´Ï´Ù: " + book.getTitle());
+        System.out.println("ë„ì„œê°€ ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤: " + book.getTitle());
     }
 
     public void displayStatus() {
         long availableCount = books.stream().filter(Book::isAvailable).count();
         long borrowedCount = books.size() - availableCount;
         System.out.println("===== " + name + " =====");
-        System.out.println("ÀüÃ¼ µµ¼­ ¼ö: " + books.size());
-        System.out.println("´ëÃâ °¡´É µµ¼­ ¼ö: " + availableCount);
-        System.out.println("´ëÃâ ÁßÀÎ µµ¼­ ¼ö: " + borrowedCount);
+        System.out.println("ì „ì²´ ë„ì„œ ìˆ˜: " + books.size());
+        System.out.println("ëŒ€ì¶œ ê°€ëŠ¥ ë„ì„œ ìˆ˜: " + availableCount);
+        System.out.println("ëŒ€ì¶œ ì¤‘ì¸ ë„ì„œ ìˆ˜: " + borrowedCount);
         System.out.println();
     }
 
@@ -68,7 +68,7 @@ public class Library {
     }
 
     public void displayAvailableBooks() {
-        System.out.println("===== ´ëÃâ °¡´ÉÇÑ µµ¼­ ¸ñ·Ï =====");
+        System.out.println("===== ëŒ€ì¶œ ê°€ëŠ¥í•œ ë„ì„œ ëª©ë¡ =====");
         for (Book b : books) {
             if (b.isAvailable()) {
                 System.out.println(b);
