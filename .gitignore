@@ -1,5 +1,6 @@
 HELP.md
 target/
+<<<<<<< HEAD
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -11,6 +12,12 @@ bin/
 
 =======
 >>>>>>> 904b890 (은행 계좌 관리 시스템 구현하기)
+=======
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+>>>>>>> 28262d1 (Spring Boot 프로젝트 작성하기)
 ### STS ###
 .apt_generated
 .classpath
@@ -18,4 +25,27 @@ bin/
 .project
 .settings
 .springBeans
+<<<<<<< HEAD
 .sts4-cache
+=======
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+>>>>>>> 28262d1 (Spring Boot 프로젝트 작성하기)
