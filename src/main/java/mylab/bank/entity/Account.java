@@ -27,16 +27,16 @@ public abstract class Account {
 	
 	public void deposit(double amount) {
 		balance += amount;
-		System.out.printf("%.1f¿øÀÌ ÀÔ±İµÇ¾ú½À´Ï´Ù. ÇöÀç ÀÜ¾×: %.1f¿ø%n", amount, balance);
+		System.out.printf("%.1fì›ì´ ì…ê¸ˆë˜ì—ˆìŠµë‹ˆë‹¤. í˜„ì¬ ì”ì•¡: %.1fì›%n", amount, balance);
 	}
 	
 	public void withdraw(double amount) throws InsufficientBalanceException{
 		if(amount > balance) {
-			String errMessage = String.format("ÀÜ¾× ºÎÁ·: ÇöÀç ÀÜ¾×Àº " + balance + "¿øÀÔ´Ï´Ù.");
+			String errMessage = String.format("ì”ì•¡ ë¶€ì¡±: í˜„ì¬ ì”ì•¡ì€ " + balance + "ì›ì…ë‹ˆë‹¤.");
 			throw new InsufficientBalanceException(errMessage);
 		}
 		balance -= amount;
-		System.out.printf("%.1f¿øÀÌ Ãâ±İµÇ¾ú½À´Ï´Ù. ÇöÀç ÀÜ¾×: %.1f¿ø%n", amount, balance);
+		System.out.printf("%.1fì›ì´ ì¶œê¸ˆë˜ì—ˆìŠµë‹ˆë‹¤. í˜„ì¬ ì”ì•¡: %.1fì›%n", amount, balance);
 	}
 	
 	@Override

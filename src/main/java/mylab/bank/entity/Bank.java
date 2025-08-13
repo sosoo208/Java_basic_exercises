@@ -29,7 +29,7 @@ public class Bank {
         return accounts.stream()
                 .filter(acc -> acc.getAccountNumber().equals(accountNumber))
                 .findFirst()
-                .orElseThrow(() -> new AccountNotFoundException("°èÁÂ¹øÈ£ " + accountNumber + "¿¡ ÇØ´çÇÏ´Â °èÁÂ¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù."));
+                .orElseThrow(() -> new AccountNotFoundException("ê³„ì¢Œë²ˆí˜¸ " + accountNumber + "ì— í•´ë‹¹í•˜ëŠ” ê³„ì¢Œë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤."));
     }
 	
 	public void deposit(String accountNumber, double amount) throws AccountNotFoundException {
@@ -47,11 +47,11 @@ public class Bank {
         Account dest = findAccount(toAcc);
         src.withdraw(amount);
         dest.deposit(amount);
-        System.out.printf("%.1f¿øÀÌ %s¿¡¼­ %s·Î ¼Û±ÝµÇ¾ú½À´Ï´Ù.%n", amount, fromAcc, toAcc);
+        System.out.printf("%.1fì›ì´ %sì—ì„œ %së¡œ ì†¡ê¸ˆë˜ì—ˆìŠµë‹ˆë‹¤.%n", amount, fromAcc, toAcc);
     }
 
     public void printAllAccounts() {
-        System.out.println("=== ¸ðµç °èÁÂ ¸ñ·Ï ===");
+        System.out.println("=== ëª¨ë“  ê³„ì¢Œ ëª©ë¡ ===");
         accounts.forEach(acc -> System.out.println(acc));
         System.out.println("===================");
     }

@@ -1,25 +1,26 @@
 package mylab.bank.entity;
 
 public class SavingsAccount extends Account {
-	private double interestRate;
-	
-	public SavingsAccount(String accountNumber, String ownerName, double balance, double interestRate) {
-		super(accountNumber, ownerName, balance);
-		this.interestRate = interestRate;
-	}
-	
-	public double getInterestRate() {
-		return interestRate;
-	}
-	
-	public void applyInterest() {
-		double interest = balance * interestRate / 100;
+    private double interestRate;
+
+    public SavingsAccount(String accountNumber, String ownerName, double balance, double interestRate) {
+        super(accountNumber, ownerName, balance);
+        this.interestRate = interestRate;
+    }
+
+    public double getInterestRate() {
+        return interestRate;
+    }
+
+    public void applyInterest() {
+        double interest = balance * interestRate / 100;
         deposit(interest);
-        System.out.printf("ÀÌÀÚ %.1f¿øÀÌ Àû¿ëµÇ¾ú½À´Ï´Ù. ÇöÀç ÀÜ¾×: %.1f¿ø%n", interest, balance);
-	}
-	
-	public String toString() {
-		return String.format("°èÁÂ¹øÈ£: %s, ¼ÒÀ¯ÀÚ: %s, ÀÜ¾×: %.1f¿ø, ÀÌÀÚÀ²: %.1f%%",
+        System.out.printf("ì´ì %.1fì›ì´ ì ìš©ë˜ì—ˆìŠµë‹ˆë‹¤. í˜„ì¬ ì”ì•¡: %.1fì›%n", interest, balance);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("ê³„ì¢Œë²ˆí˜¸: %s, ì†Œìœ ì: %s, ì”ì•¡: %.1fì›, ì´ììœ¨: %.1f%%",
                 getAccountNumber(), getOwnerName(), getBalance(), interestRate);
-	}
+    }
 }

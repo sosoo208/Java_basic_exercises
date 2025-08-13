@@ -4,52 +4,51 @@ import mylab.bank.entity.*;
 import mylab.bank.exception.*;
 
 public class BankDemo {
-	public static void main(String[] args) {
-		Bank bank = new Bank();
-		
-		 System.out.println("=== °èÁÂ »ı¼º ===");
-	        String acc1 = bank.createSavingsAccount("È«±æµ¿", 10000, 3.0);
-	        String acc2 = bank.createCheckingAccount("±èÃ¶¼ö", 20000, 5000);
-	        String acc3 = bank.createSavingsAccount("ÀÌ¿µÈñ", 30000, 2.0);
+    public static void main(String[] args) {
+        Bank bank = new Bank();
 
-	        bank.printAllAccounts();
+        System.out.println("=== ê³„ì¢Œ ìƒì„± ===");
+        String acc1 = bank.createSavingsAccount("í™ê¸¸ë™", 10000, 3.0);
+        String acc2 = bank.createCheckingAccount("ê¹€ì² ìˆ˜", 20000, 5000);
+        String acc3 = bank.createSavingsAccount("ì´ì˜í¬", 30000, 2.0);
 
-	        System.out.println("\n=== ÀÔ±İ/Ãâ±İ Å×½ºÆ® ===");
-	        try {
-	            bank.deposit(acc1, 5000);
-	            bank.withdraw(acc2, 3000);
-	        } catch (Exception e) {
-	            System.out.println("¿¹¿Ü ¹ß»ı: " + e.getMessage());
-	        }
+        bank.printAllAccounts();
 
-	        System.out.println("\n=== ÀÌÀÚ Àû¿ë Å×½ºÆ® ===");
-	        try {
-	            SavingsAccount sa = (SavingsAccount) bank.findAccount(acc1);
-	            sa.applyInterest();
-	        } catch (Exception e) {
-	            System.out.println("¿¹¿Ü ¹ß»ı: " + e.getMessage());
-	        }
+        System.out.println("\n=== ì…ê¸ˆ/ì¶œê¸ˆ í…ŒìŠ¤íŠ¸ ===");
+        try {
+            bank.deposit(acc1, 5000);
+            bank.withdraw(acc2, 3000);
+        } catch (Exception e) {
+            System.out.println("ì˜ˆì™¸ ë°œìƒ: " + e.getMessage());
+        }
 
-	        System.out.println("\n=== °èÁÂ ÀÌÃ¼ Å×½ºÆ® ===");
-	        try {
-	            bank.transfer(acc3, acc2, 5000);
-	        } catch (Exception e) {
-	            System.out.println("¿¹¿Ü ¹ß»ı: " + e.getMessage());
-	        }
-	        bank.printAllAccounts();
+        System.out.println("\n=== ì´ì ì ìš© í…ŒìŠ¤íŠ¸ ===");
+        try {
+            SavingsAccount sa = (SavingsAccount) bank.findAccount(acc1);
+            sa.applyInterest();
+        } catch (Exception e) {
+            System.out.println("ì˜ˆì™¸ ë°œìƒ: " + e.getMessage());
+        }
 
-	        System.out.println("\n=== ¿¹¿Ü Å×½ºÆ® ===");
-	        try {
-	            bank.withdraw(acc2, 6000);
-	        } catch (Exception e) {
-	            System.out.println("¿¹¿Ü ¹ß»ı: " + e.getMessage());
-	        }
+        System.out.println("\n=== ê³„ì¢Œ ì´ì²´ í…ŒìŠ¤íŠ¸ ===");
+        try {
+            bank.transfer(acc3, acc2, 5000);
+        } catch (Exception e) {
+            System.out.println("ì˜ˆì™¸ ë°œìƒ: " + e.getMessage());
+        }
+        bank.printAllAccounts();
 
-	        try {
-	            bank.findAccount("AC9999");
-	        } catch (Exception e) {
-	            System.out.println("¿¹¿Ü ¹ß»ı: " + e.getMessage());
-	        }
-	}
+        System.out.println("\n=== ì˜ˆì™¸ í…ŒìŠ¤íŠ¸ ===");
+        try {
+            bank.withdraw(acc2, 6000);
+        } catch (Exception e) {
+            System.out.println("ì˜ˆì™¸ ë°œìƒ: " + e.getMessage());
+        }
 
+        try {
+            bank.findAccount("AC9999");
+        } catch (Exception e) {
+            System.out.println("ì˜ˆì™¸ ë°œìƒ: " + e.getMessage());
+        }
+    }
 }

@@ -1,34 +1,34 @@
 package mylab.bank.entity;
+
 import mylab.bank.exception.WithdrawalLimitExceededException;
 
 public class CheckingAccount extends Account {
-	
-	private double withdrawalLimit;
-	
-	public CheckingAccount(String accountNumber, String ownerName, double balance, double withdrawalLimit) {
-		super(accountNumber, ownerName, balance);
+    private double withdrawalLimit;
+
+    public CheckingAccount(String accountNumber, String ownerName, double balance, double withdrawalLimit) {
+        super(accountNumber, ownerName, balance);
         this.withdrawalLimit = withdrawalLimit;
-	}
-	
-	public double getWithdrawalLimit() {
-		return withdrawalLimit;
-	}
-	
-	public void withdraw(double amount) 
-			throws WithdrawalLimitExceededException{
-		if (amount > withdrawalLimit) {
-            throw new WithdrawalLimitExceededException("Ãâ±İ ÇÑµµ¸¦ ÃÊ°úÇß½À´Ï´Ù. ÇÑµµ: " + withdrawalLimit + "¿ø");
+    }
+
+    public double getWithdrawalLimit() {
+        return withdrawalLimit;
+    }
+
+    @Override
+    public void withdraw(double amount) throws WithdrawalLimitExceededException {
+        if (amount > withdrawalLimit) {
+            throw new WithdrawalLimitExceededException("ì¶œê¸ˆ í•œë„ë¥¼ ì´ˆê³¼í–ˆìŠµë‹ˆë‹¤. í•œë„: " + withdrawalLimit + "ì›");
         }
         if (amount > balance) {
-            throw new WithdrawalLimitExceededException("ÀÜ¾× ºÎÁ·: ÇöÀç ÀÜ¾×Àº " + balance + "¿øÀÔ´Ï´Ù.");
+            throw new WithdrawalLimitExceededException("ì”ì•¡ ë¶€ì¡±: í˜„ì¬ ì”ì•¡ì€ " + balance + "ì›ì…ë‹ˆë‹¤.");
         }
         balance -= amount;
-        System.out.printf("%.1f¿øÀÌ Ãâ±İµÇ¾ú½À´Ï´Ù. ÇöÀç ÀÜ¾×: %.1f¿ø%n", amount, balance);
-	}
-	
-	@Override
+        System.out.printf("%.1fì›ì´ ì¶œê¸ˆë˜ì—ˆìŠµë‹ˆë‹¤. í˜„ì¬ ì”ì•¡: %.1fì›%n", amount, balance);
+    }
+
+    @Override
     public String toString() {
-        return String.format("°èÁÂ¹øÈ£: %s, ¼ÒÀ¯ÀÚ: %s, ÀÜ¾×: %.1f¿ø, Ãâ±İ ÇÑµµ: %.1f¿ø",
+        return String.format("ê³„ì¢Œë²ˆí˜¸: %s, ì†Œìœ ì: %s, ì”ì•¡: %.1fì›, ì¶œê¸ˆ í•œë„: %.1fì›",
                 getAccountNumber(), getOwnerName(), getBalance(), withdrawalLimit);
     }
 }
