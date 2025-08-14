@@ -10,7 +10,7 @@ public class BankDemo {
         System.out.println("=== 계좌 생성 ===");
         String acc1 = bank.createSavingsAccount("홍길동", 10000, 3.0);
         String acc2 = bank.createCheckingAccount("김철수", 20000, 5000);
-        String acc3 = bank.createSavingsAccount("이영희", 30000, 2.0);
+        String acc3 = bank.createSavingscount("이영희", 30000, 2.0);
 
         bank.printAllAccounts();
 
