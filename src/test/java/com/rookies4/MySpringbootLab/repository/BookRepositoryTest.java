@@ -79,7 +79,15 @@ class BookRepositoryTest {
     @Test
     void testDeleteBook() {
         Book book = bookRepository.findByIsbn("9788956746425")
-                .orElseThrow(() -> new RuntimeException("Book Not Found"));
+                .orElseGet(() -> {
+                    Book b = new Book();
+                    b.setTitle("스프링 부트 입문");
+                    b.setAuthor("홍길동");
+                    b.setIsbn("9788956746425");
+                    b.setPrice(32000);
+                    b.setPublishDate(LocalDateTime.of(2025,5,7,0,0));
+                    return bookRepository.save(b);
+                });
 
         bookRepository.delete(book);
 

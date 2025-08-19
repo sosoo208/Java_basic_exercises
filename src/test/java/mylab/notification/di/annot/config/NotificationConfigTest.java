@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(classes = NotificationConfig.class)
 public class NotificationConfigTest {
 
-    @Autorwired
+    @Autowired
     private NotificationManager notificationManager;
 
     @Test
