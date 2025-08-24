@@ -9,6 +9,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -32,14 +33,14 @@ class BookRepositoryTest {
         book1.setAuthor("홍길동");
         book1.setIsbn("9788956746425");
         book1.setPrice(30000);
-        book1.setPublishDate(LocalDateTime.of(2025, 5, 7, 0, 0));
+        book1.setPublishDate(LocalDate.of(2025, 5, 7));
 
         Book book2 = new Book();
         book2.setTitle("JPA 프로그래밍");
         book2.setAuthor("박둘리");
         book2.setIsbn("9788956746432");
         book2.setPrice(35000);
-        book2.setPublishDate(LocalDateTime.of(2025, 4, 30, 0, 0));
+        book2.setPublishDate(LocalDate.of(2025, 4, 30));
 
         Book savedBook1 = bookRepository.save(book1);
         assertThat(savedBook1).isNotNull();
@@ -85,7 +86,7 @@ class BookRepositoryTest {
                     b.setAuthor("홍길동");
                     b.setIsbn("9788956746425");
                     b.setPrice(32000);
-                    b.setPublishDate(LocalDateTime.of(2025,5,7,0,0));
+                    b.setPublishDate(LocalDate.of(2025,5,7));
                     return bookRepository.save(b);
                 });
 

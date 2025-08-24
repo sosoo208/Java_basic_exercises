@@ -49,3 +49,5 @@ build/
 ### VS Code ###
 .vscode/
 >>>>>>> 28262d1 (Spring Boot 프로젝트 작성하기)
+
+/logs/spring.log
