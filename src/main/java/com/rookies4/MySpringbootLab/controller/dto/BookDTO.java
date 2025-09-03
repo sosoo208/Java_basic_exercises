@@ -39,6 +39,8 @@ public class BookDTO {
 
         @Valid
         private BookDetailDTO detailRequest;
+
+        private Long publisherId; // Publisher 연동용 필드 추가
     }
 
     @Data
@@ -104,5 +106,27 @@ public class BookDTO {
         private String publisher;
         private String coverImageUrl;
         private String edition;
+    }
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @Builder
+    public static class SimpleResponse {
+        private Long id;
+        private String title;
+        private String author;
+        private String isbn;
+        private Integer price;
+
+        public static SimpleResponse fromEntity(Book book) {
+            return SimpleResponse.builder()
+                    .id(book.getId())
+                    .title(book.getTitle())
+                    .author(book.getAuthor())
+                    .isbn(book.getIsbn())
+                    .price(book.getPrice())
+                    .build();
+        }
     }
 }
