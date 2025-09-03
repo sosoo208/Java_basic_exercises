@@ -37,4 +37,8 @@ public class Book {
             fetch = FetchType.LAZY, orphanRemoval = true)
     private BookDetail bookDetail;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "publisher_id")
+    private Publisher publisher;
+
 }
